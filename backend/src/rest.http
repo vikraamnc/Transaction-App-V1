@@ -1,0 +1,72 @@
+# API testing for our transcation history
+# Protocals: http://
+# URL: localhost
+# port: :8000
+# patch: /api/v1
+
+
+
+
+
+@userApi = http://localhost:8000/api/v1/user
+
+@transApi = http://localhost:8000/api/v1/trans
+
+
+
+
+
+
+
+
+### check server status
+GET  http://localhost:8000/
+
+# ==============user api ============
+### user get API
+
+GET {{userApi}}
+
+### user post API
+
+POST   {{userApi}}
+Content-Type: application/json
+
+{
+    "name": "bikram",
+    "email": "jj@gmail.com",
+    "password": "1111111"
+}
+
+
+### login user
+
+POST   {{userApi}}/login
+Content-Type: application/json
+
+{
+    "email": "jj@gmail.com",
+    "password": "111111"
+}
+
+
+### user put API
+
+PUT  {{userApi}}
+
+
+### user patch API
+
+PATCH  {{userApi}}
+
+
+### user delete API
+
+DELETE  {{userApi}}
+
+
+
+# ==============transaction api =============
+### trans get API
+
+GET {{transApi}}
